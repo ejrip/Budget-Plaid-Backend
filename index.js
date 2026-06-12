@@ -6,6 +6,7 @@ const app = express();
 app.use(cors({ origin: '*' }));
 app.options('*', cors());
 app.use(express.json());
+app.use(express.static('public'));
 
 const config = new Configuration({
 basePath: PlaidEnvironments.production,
