@@ -3,7 +3,8 @@ const { Configuration, PlaidApi, PlaidEnvironments } = require('plaid');
 const cors = require('cors');
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: '*' }));
+app.options('*', cors());
 app.use(express.json());
 
 const config = new Configuration({
