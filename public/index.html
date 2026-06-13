@@ -615,8 +615,7 @@
         }
       });
 
-      state.funFund = Math.max(0, state.funFund - funSpent);
-      state.billsFund = Math.max(0, state.billsFund - billsSpent);
+      state.funFund = Math.max(0, state.funFund - funSpent - billsSpent);
 
       const now = new Date().toLocaleTimeString();
       document.getElementById('last-sync').textContent = `Last synced ${now}`;
